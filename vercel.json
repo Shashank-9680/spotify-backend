@@ -15,7 +15,15 @@
       "dest": "index.js"
     },
     {
+      "src": "/auth/(.*)",
+      "dest": "index.js"
+    },
+    {
       "src": "/song",
+      "dest": "index.js"
+    },
+    {
+      "src": "/song/(.*)",
       "dest": "index.js"
     },
     {
@@ -28,6 +36,10 @@
     },
     {
       "src": "/likedsongs",
+      "dest": "index.js"
+    },
+    {
+      "src": "/likedsongs/(.*)",
       "dest": "index.js"
     },
     {
