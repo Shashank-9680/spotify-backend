@@ -1,58 +1,15 @@
 {
   "builds": [
     {
-      "src": "index.js",
+      "src": "./index.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "build/**",
-      "use": "@vercel/static"
     }
+  
   ],
   "routes": [
     {
-      "src": "/auth",
+      "src": "/(.*)",
       "dest": "index.js"
-    },
-    {
-      "src": "/auth/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/auth/(.*)",
-      "dest": "build/index.html"
-    },
-    {
-      "src": "/song",
-      "dest": "index.js"
-    },
-    {
-      "src": "/song/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/playlist",
-      "dest": "index.js"
-    },
-    {
-      "src": "/playlist/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/likedsongs",
-      "dest": "index.js"
-    },
-    {
-      "src": "/likedsongs/(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/",
-      "dest": "build/index.html"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "build/$1"
     }
   ]
 }
