@@ -19,6 +19,10 @@
       "dest": "index.js"
     },
     {
+      "src": "/auth/(.*)",
+      "dest": "build/index.html"
+    },
+    {
       "src": "/song",
       "dest": "index.js"
     },
