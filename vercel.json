@@ -1,31 +1,42 @@
 {
-  "version": 2,
   "builds": [
-    { "src": "index.js", "use": "@vercel/node" }
-  ],
-
-  "routes": [
-    { "handle": "filesystem" },
     {
-      "src": "/auth(.*)",
-      "dest": "index.js"
+      "src": "index.js",
+      "use": "@vercel/node"
     },
     {
-      "src": "/song(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/playlist(.*)",
-      "dest": "index.js"
-    },
-    {
-      "src": "/likedsongs(.*)",
-      "dest": "index.js"
+      "src": "build/**",
+      "use": "@vercel/static"
     }
-   
-    
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "index.js" }]
-
-  
+  "routes": [
+    {
+      "src": "/products",
+      "dest": "index.js"
+    },
+    {
+      "src": "/products/(.*)",
+      "dest": "index.js"
+    },
+    {
+      "src": "/song",
+      "dest": "index.js"
+    },
+    {
+      "src": "/playlist",
+      "dest": "index.js"
+    },
+    {
+      "src": "/likedsongs",
+      "dest": "index.js"
+    },
+    {
+      "src": "/",
+      "dest": "build/index.html"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "build/$1"
+    }
+  ]
 }
