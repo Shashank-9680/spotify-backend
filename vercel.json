@@ -39,6 +39,15 @@
       "dest": "/build/index.html"
     },
     {
+      "src": "/playlist",
+      "dest": "/build/index.html"
+    },
+    {
+      "src": "/playlist/(.*)",
+      "dest": "/build/index.html"
+    },
+
+    {
       "src": "/profile",
       "dest": "/build/index.html"
     },
@@ -51,7 +60,7 @@
       "dest": "/build/index.html"
     },
     {
-      "src": "/playlist/:playlistId",
+      "src": "/playlist",
       "dest": "/build/index.html"
     },
     {

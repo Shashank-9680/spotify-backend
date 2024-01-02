@@ -11,9 +11,5 @@ const likedsongSchema = new Schema({
       unique: true,
     },
   ],
-  artist: {
-    type: mongoose.Types.ObjectId,
-    ref: "User",
-  },
 });
 exports.LikedSong = mongoose.model("LikedSong", likedsongSchema);
