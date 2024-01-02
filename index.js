@@ -17,7 +17,8 @@ app.use(express.json());
 app.use(cors());
 const port = 8080;
 // app.use("/auth",authRoutes.router)
-app.use("/auth", (req, res) => {
+
+app.use("/", (req, res) => {
   res.send("Hi");
 });
 app.use("/song", songRoutes.router);
