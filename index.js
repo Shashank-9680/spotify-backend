@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 const port = 8080;
 // app.use("/auth",authRoutes.router)
-
+app.use(express.static(path.resolve(__dirname, "build")));
 app.use("/", (req, res) => {
   res.send("Hi");
 });
@@ -31,7 +31,7 @@ app.listen(port, () => {
 let opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.SECRET_KEY;
-app.use(express.static(path.resolve(__dirname, "build")));
+
 // passport.use(
 //   new JwtStrategy(opts, function async(jwt_payload, done) {
 //     User.findOne({ id: jwt_payload.sub }, function (err, user) {
