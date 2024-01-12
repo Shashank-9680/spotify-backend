@@ -4,6 +4,10 @@ const likedsongSchema = new Schema({
   color: {
     type: Boolean,
   },
+  artist: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
+  },
   songs: [
     {
       type: mongoose.Types.ObjectId,

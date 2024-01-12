@@ -71,5 +71,23 @@ router.get(
     }
   }
 );
+router.get(
+  "/get/particular-artist-song",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const artistId = req.user._id;
+    console.log(artistId);
+    try {
+      const likedSongs = await LikedSong.findOne({ artist: artistId }).exec();
 
+      if (likedSongs) {
+        res.json({ artistId: artistId, likedSongs: likedSongs.songs });
+      } else {
+        res.status(404).json({ error: "No liked songs found for the artist" });
+      }
+    } catch (error) {
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
 exports.router = router;
