@@ -12,8 +12,9 @@ router.post(
     const currentUser = req.user;
     const { name, thumbnail, songs } = req.body;
 
+    // Validate request data
     if (!name || !thumbnail || !songs) {
-      return res.status(301).json({ err: "Insufficient data" });
+      return res.status(400).json({ error: "Bad Request - Insufficient data" });
     }
 
     try {
@@ -21,8 +22,11 @@ router.post(
         name,
         owner: currentUser._id,
       });
+
       if (existingPlaylist) {
-        return res.status(409).json({ err: "Playlist name already exists" });
+        return res
+          .status(409)
+          .json({ error: "Conflict - Playlist name already exists" });
       }
 
       const playlistData = {
@@ -36,8 +40,8 @@ router.post(
       const playlist = await Playlist.create(playlistData);
       return res.status(200).json(playlist);
     } catch (error) {
-      console.error(error);
-      return res.status(500).json({ err: "Internal server error" });
+      console.error("Error creating playlist:", error);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
   }
 );
