@@ -15,57 +15,8 @@
     
   
     {
-      "src": "/library",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/search",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/login",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/signup",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/uploadsong",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/home",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/playlist",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/playlist/(.*)",
-      "dest": "/build/index.html"
-    },
-
-    {
-      "src": "/profile",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/allplaylist",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/likedsongs/(.*)",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/playlist",
-      "dest": "/build/index.html"
-    },
-    {
-      "src": "/mymusic",
-      "dest": "/build/index.html"
+      "src": "/(.*)",
+      "dest": "index.js"
     },
     {
       "src": "/(.*)",
