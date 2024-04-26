@@ -10,7 +10,7 @@ const playlistRoutes = require("./routes/playlist");
 var JwtStrategy = require("passport-jwt").Strategy,
   ExtractJwt = require("passport-jwt").ExtractJwt;
 const authRoutes = require("./routes/auth");
-const LikedSongsRoutes = require("./routes/LikedSong");
+const LikedSongsRoutes = require("./routes/LikedSong.js");
 
 const path = require("path");
 app.use(express.json());

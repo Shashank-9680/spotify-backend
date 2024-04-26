@@ -56,7 +56,7 @@
       "dest": "/build/index.html"
     },
     {
-      "src": "/likedsongs",
+      "src": "/likedsongs/(.*)",
       "dest": "/build/index.html"
     },
     {
@@ -71,8 +71,5 @@
       "src": "/(.*)",
       "dest": "/index.js"
     }
-
-
-
   ]
 }
