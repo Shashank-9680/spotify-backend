@@ -12,7 +12,10 @@
   
   ],
   "routes": [
-    
+    {
+      "src": "/(.*)",
+      "dest": "/build/index.html"
+    },
   
     {
       "src": "/library",
@@ -67,10 +70,7 @@
       "src": "/mymusic",
       "dest": "/build/index.html"
     },
-    {
-      "src": "/(.*)",
-      "dest": "/build/index.html"
-    },
+  
     {
       "src": "/(.*)",
       "dest": "/index.js"
