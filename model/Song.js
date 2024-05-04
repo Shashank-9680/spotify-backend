@@ -22,5 +22,9 @@ const songSchema = new Schema({
     type: mongoose.Types.ObjectId,
     ref: "User",
   },
+  duration: {
+    type: Date,
+    required: true,
+  },
 });
 exports.Song = mongoose.model("Song", songSchema);

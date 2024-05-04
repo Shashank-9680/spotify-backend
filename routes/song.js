@@ -8,14 +8,21 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     // req.user getss the user because of passport.authenticate
-    const { name, thumbnail, track, description } = req.body;
-    if (!name || !thumbnail || !track || !description) {
+    const { name, thumbnail, track, description, duration } = req.body;
+    if (!name || !thumbnail || !track || !description || !duration) {
       return res
         .status(301)
         .json({ err: "Insufficient details to create song." });
     }
     const artist = req.user._id;
-    const songDetails = { name, thumbnail, track, artist, description };
+    const songDetails = {
+      name,
+      thumbnail,
+      track,
+      artist,
+      description,
+      duration,
+    };
 
     const createdSong = await Song.create(songDetails);
 
