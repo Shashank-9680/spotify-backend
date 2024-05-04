@@ -5,23 +5,14 @@
       "use": "@vercel/node"
     },
     {
-      "src": "build/**",
+      "src": "../spotify-frontend/build/**",
       "use": "@vercel/static"
     }
-   
-  
   ],
   "routes": [
-  
-  
-  
     {
       "src": "/(.*)",
       "dest": "/index.js"
     }
-  
-
-
-
   ]
 }
