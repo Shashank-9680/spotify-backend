@@ -12,6 +12,11 @@ const likedSongSchema = new Schema({
     ref: "Song",
     required: true,
   },
+  currentuserInfo: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 exports.LikedSong = mongoose.model("LikedSong", likedSongSchema);
